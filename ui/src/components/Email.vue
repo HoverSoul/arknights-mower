@@ -57,10 +57,6 @@ async function test_email() {
             </td>
           </tr>
         </table>
-        <div class="email-test">
-          <n-button @click="test_email">发送测试邮件</n-button>
-          <div>{{ test_result }}</div>
-        </div>
         <n-divider />
         <table class="email-table">
           <tr>
@@ -68,7 +64,10 @@ async function test_email() {
             <td><n-input v-model:value="mail_subject" /></td>
           </tr>
         </table>
-        <div>标题前缀可用于区分多个Mower。</div>
+        <div class="email-test">
+          <n-button @click="test_email">发送测试邮件</n-button>
+          <div>{{ test_result }}</div>
+        </div>
       </template>
     </template>
   </n-card>
@@ -85,7 +84,7 @@ async function test_email() {
 
 .email-table {
   width: 100%;
-  margin-bottom: 12px;
+  margin: 8px 0;
 }
 
 .email-test {
@@ -109,5 +108,9 @@ p {
 .card-title {
   font-weight: 500;
   font-size: 18px;
+}
+
+.n-divider:not(.n-divider--vertical) {
+  margin: 0;
 }
 </style>
